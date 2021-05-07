@@ -66,7 +66,7 @@ namespace CompanyAPI.Models.Repositories
             return await _context.Companies.FirstOrDefaultAsync(company => company.ISIN == isin);
         }
 
-        public async Task<Company> UpdateCompany(int id, CompanyResponse companyReq)
+        public async Task<Company> UpdateCompany(int id, CompanyRequest companyReq)
         {
             var result = await _context.Companies.FirstOrDefaultAsync(c => c.Id == id);
             if (result != null)

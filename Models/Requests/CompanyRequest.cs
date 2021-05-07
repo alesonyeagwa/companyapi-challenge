@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CompanyAPI.Models.Requests
 {
-    public class CompanyResponse
+    public class CompanyRequest
     {
         [StringLength(255, MinimumLength = 3)]
         public string Name { get; set; }

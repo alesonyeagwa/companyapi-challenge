@@ -63,11 +63,25 @@ namespace CompanyAPI.Controllers
             return company;
         }
 
+        // GET: api/Companies/isin/5
+        [HttpGet("isin/{isin}")]
+        public async Task<ActionResult<Company>> GetCompanyByISIN(string isin)
+        {
+            var company = await companyRepository.GetCompanyByISIN(isin);
+
+            if (company == null)
+            {
+                return NotFound();
+            }
+
+            return company;
+        }
+
         // PUT: api/Companies/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCompany(int id, CompanyResponse companyReq)
+        public async Task<IActionResult> PutCompany(int id, CompanyRequest companyReq)
         {
             Company company = await companyRepository.GetCompany(id);
             if (company == null)

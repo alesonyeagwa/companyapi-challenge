@@ -15,7 +15,7 @@ namespace CompanyAPI.Models.Repositories
         Task<Company> GetCompany(int companyId);
         Task<Company> GetCompanyByISIN(string isin);
         Task<Company> AddCompany(Company company);
-        Task<Company> UpdateCompany(int id, CompanyResponse companyReq);
+        Task<Company> UpdateCompany(int id, CompanyRequest companyReq);
         Task<GetCompanyListResponseDto> GetByPageAsync(int limit, int page, CancellationToken cancellationToken);
         Task<int> DeleteCompany(int companyId);
         bool CompanyExists(int id);
