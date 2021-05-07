@@ -25,5 +25,25 @@ namespace CompanyAPI.Services
         {
             return await _context.Users.ToListAsync();
         }
+
+        public async Task<User> AddUser(User user)
+        {
+            user.CreatedAt = DateTime.Now;
+            user.UpdatedAt = DateTime.Now;
+            user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+            var result = await _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync();
+            return result.Entity;
+        }
+
+        public bool UserExists(int id)
+        {
+            return _context.Users.Any(e => e.Id == id);
+        }
+
+        public bool UsernameExists(string username)
+        {
+            return _context.Users.Any(e => e.UserName == username);
+        }
     }
 }

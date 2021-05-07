@@ -10,5 +10,8 @@ namespace CompanyAPI.Services
     {
         Task<IEnumerable<User>> GetUsers();
         User GetUser(int userId);
+        Task<User> AddUser(User user);
+        bool UserExists(int id);
+        bool UsernameExists(string username);
     }
 }
