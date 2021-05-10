@@ -5,11 +5,7 @@ This is a simple API application developed with ASP.NET Core with the target fra
 
 ## All Features
 - User account registration
-- Creation and management of 
-- Access to published posts by other users
-- Create and manage comments on published posts
-- Access to all published posts by a user
-- Access to all published comments by a user
+- Creation and management of company details
 
 ## Installation
 - Clone repository
